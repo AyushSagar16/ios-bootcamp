@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var sliderValue: Double = 0
+    private var songLength: Int = 101
     var body: some View {
         VStack {
             HStack {
@@ -29,6 +30,16 @@ struct ContentView: View {
                     }
                     Spacer()
                     Image(systemName: "heart").font(.title)
+                }
+                Slider(
+                    value: $sliderValue,
+                    in: 0...60,
+                    step: 1.0
+                )
+                HStack {
+                    Text("0").font(.caption)
+                    Spacer()
+                    Text("60").font(.caption)
                 }
                 
             }
